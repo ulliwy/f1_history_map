@@ -52,18 +52,29 @@
       pointer-events: all;
     }
 
-    div.legend_placeholder {
-      position: fixed;
-      min-width: 200px;
-      top: 10px;
-      left: 50px;
+    .container {
+      margin: auto;
+      text-align: center;
     }
 
-    div.pilot_list_placeholder {
-      position: fixed;
-      display: block;
-      top: 10px;
-      left: 1280px;
+    .legend_placeholder {
+      min-width: 100px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .map_placeholder {
+      min-width: 600px;
+    }
+
+    .pilot_list_placeholder {
+      min-width: 100px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .inline {
+      display: inline-block;
     }
 
     svg.map {
@@ -94,7 +105,7 @@
 
     div.years_buttons {
       margin: auto;
-      width: 800px;
+      width: 600px;
     }
 
     div.circle {
@@ -121,8 +132,8 @@
       function draw(geo_data) {
         "use strict";
         var margin = 75,
-            width = 1000 - margin,
-            height = 600 - margin;
+            width = 600 - margin,
+            height = 500 - margin;
 
         var zoom = d3.behavior.zoom()
           .translate([0, 0])
@@ -152,7 +163,7 @@
         }
 
         var projection = d3.geo.mercator()
-          .scale(140)
+          .scale(120)
           .translate([width / 2 , height / 2 + 150]);
 
         var path = d3.geo.path().projection(projection);
@@ -339,9 +350,10 @@
           //var r = update('2016');
           var years = [];
 
-          for (var i = 1950; i <= 2016; i++) {
+          for (var i = 2016; i >= 1950; i--) {
             years.push(i);
           }
+          debugger;
 
           //initial button
           var buttons = d3.select('body').select('div.years_placeholder')
@@ -388,10 +400,14 @@
   </head>
 <body>
   <h1>Formula 1 Historical Results</h1>
-  <div class="legend_placeholder"><h2>Grand Prix Winners</h2></div>
-  <div class="map_placeholder"></div>
-  <div class="pilot_list_placeholder"><h2>Finish Line</h2></div>
-  <div class="years_placeholder"></div>
+  <div class='container'>
+    <div class="legend_placeholder inline"><h2>Grand Prix Winners</h2></div>
+    <div class="inline">
+      <div class="map_placeholder"></div>
+      <div class="years_placeholder"></div>
+    </div>
+    <div class="pilot_list_placeholder inline"><h2>Finish Line</h2></div>
+  </div>
   <script type="text/javascript">
     d3.json("world_countries.json", draw);
   </script>
