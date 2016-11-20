@@ -33,6 +33,19 @@
       opacity: 0.7;
     }
 
+    .floater {
+      height: 30%;
+    }
+
+    .loading {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: white;
+      opacity: 0.8;
+    }
+
     .hidden {
       display: none;
     }
@@ -427,6 +440,8 @@
           });
         
           update('2016');
+          d3.select('.loading')
+            .remove();
         };
 
 
@@ -439,6 +454,7 @@
       </script>
   </head>
 <body>
+  <div class='loading'><div class='floater'></div><div>Loading...</div></div>
   <h1>Formula 1 Historical Results</h1>
   <div class='container'>
     <img src="img/f1_logo_big.png" alt="logo" />
