@@ -8,22 +8,33 @@
   </script>
   <style>
     body {
-      font-family: 'Open Sans', serif;
+      font-family: 'Helvetica', serif;
       font-size: 18px;
+      margin: 0px;
+    }
+
+    img {
+      position: fixed;
+      width: 128px;
+      top: 10px;
+      left: 10px;
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 24px;
       margin: 5px;
       text-align: center;
+      font-weight: bold;
     }
 
     h2 {
       font-size: 20px;
+      background-color: white;
+      opacity: 0.7;
     }
 
     .hidden {
-        display: none;
+      display: none;
     }
     
     div.tooltip {
@@ -34,17 +45,6 @@
         border-radius: 2px;
         opacity: 0.9;
         position: absolute;
-    }
-
-    span.position {
-      margin-right: 8px;
-    }
-
-
-    span.pilot {
-      display: inline;
-      margin-right: 20px;
-      left: 20px;
     }
 
     .overlay {
@@ -58,19 +58,39 @@
     }
 
     .legend_placeholder {
-      min-width: 100px;
-      vertical-align: top;
+      margin-left: 10px;
       text-align: left;
+      float: left;
+      overflow: visible;
+      z-index: 1000;
+      height: 0px;
+      top: 30px;
+      position: relative;
+    }
+
+    .legend {
+      background-color: white;
+      opacity: 0.7;
     }
 
     .map_placeholder {
       min-width: 600px;
     }
 
+    .pilot_table {
+      background-color: white;
+      opacity: 0.7;
+      font-size: 16px;s
+    }
+
     .pilot_list_placeholder {
-      min-width: 100px;
-      vertical-align: top;
       text-align: left;
+      float: right;
+      overflow: visible;
+      z-index: 1000;
+      height: 0px;
+      position: relative;
+      margin-right: 10px;
     }
 
     .inline {
@@ -105,7 +125,7 @@
 
     div.years_buttons {
       margin: auto;
-      width: 600px;
+      width: 606px;
     }
 
     div.circle {
@@ -144,7 +164,7 @@
         var svg = d3.select("body").select('div.map_placeholder')
             .append("svg")
             .attr('class', 'map')
-            .attr("width", width + margin)
+            .attr("width", '100%')
             .attr("height", height + margin)
             .call(zoom)
             .append('g')
@@ -164,7 +184,7 @@
 
         var projection = d3.geo.mercator()
           .scale(120)
-          .translate([width / 2 , height / 2 + 150]);
+          .translate([document.body.clientWidth / 2 , height / 2 + 100]);
 
         var path = d3.geo.path().projection(projection);
 
@@ -228,6 +248,13 @@
                   return ((gp_winner.year === d.year) && (gp_winner.gp_name === d.gp_name));
                 });
               }
+              debugger;
+
+              d3.select('.pilot_list_placeholder')
+                .select('h2')
+                .text('Grand Prix: ' + grand_prix[0].gp_name);
+
+              debugger;
               
               grand_prix.sort(function(a, b) {
                 var a_int = parseInt(a.pos, 10);
@@ -251,10 +278,23 @@
 
               var l = pilot_list.enter()
                 .append('tr')
-                .attr('class', 'pilot_list')
+                .attr('class', 'pilot_list');
 
               l.append('td')
                 .attr('class', 'position')
+                .attr('title', function(d) {
+                  if (d.pos === 'r') {
+                    return 'Retired';
+                  } else if (d.pos === 'dq') {
+                    return 'Disqualified';
+                  } else if (d.pos === 'ns') {
+                    return 'Not Started';
+                  } else if (d.pos === 'nq') {
+                    return 'Not Qualified';
+                  } else {
+                    return 'Position: ' + d.pos;
+                  }
+                })
                 .text(function(d) {
                   return d.pos;
                 });
@@ -270,6 +310,7 @@
                 .text(function(d) {
                   return d.time;
                 })
+
             }
 
             show_pilot_list(season[0]);  //initial list
@@ -353,7 +394,6 @@
           for (var i = 2016; i >= 1950; i--) {
             years.push(i);
           }
-          debugger;
 
           //initial button
           var buttons = d3.select('body').select('div.years_placeholder')
@@ -401,12 +441,15 @@
 <body>
   <h1>Formula 1 Historical Results</h1>
   <div class='container'>
-    <div class="legend_placeholder inline"><h2>Grand Prix Winners</h2></div>
-    <div class="inline">
+    <img src="img/f1_logo_big.png" alt="logo" />
+    <div class="legend_placeholder"><h2>Grand Prix Winners</h2></div>
+    <div class="pilot_list_placeholder">
+      <h2>Grand Prix</h2>
+    </div>
+    <div>
       <div class="map_placeholder"></div>
       <div class="years_placeholder"></div>
     </div>
-    <div class="pilot_list_placeholder inline"><h2>Finish Line</h2></div>
   </div>
   <script type="text/javascript">
     d3.json("world_countries.json", draw);
