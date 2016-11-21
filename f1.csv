@@ -2523,23 +2523,23 @@ id,pers_num,gp_name,team,pos,time,year,round,pilot,code,circuit,color,lon,lat
 2521,19,United States,LOLA,ns,,1962,8,R.Salvadori,USA,Watkins Glen,#ffffff,-76.873292,42.380629
 2522,25,United States,LOTUS,ns,,1962,8,J.Hall,USA,Watkins Glen,#ffffff,-76.873292,42.380629
 2523,11,United States,PORSCHE,ns,,1962,8,P.Hill,USA,Watkins Glen,#ffffff,-76.873292,42.380629
-2524,3,South Africa,BRM,1,2:08:03.300,1962,9,G.Hill,ZAF,East London,#66d9ff,-0.127758,51.507351
-2525,8,South Africa,COOPER,2,2:08:53.100,1962,9,B.McLaren,ZAF,East London,#ffffff,-0.127758,51.507351
-2526,9,South Africa,COOPER,3,2:08:53.600,1962,9,T.Maggs,ZAF,East London,#ffffff,-0.127758,51.507351
-2527,10,South Africa,BRABHAM,4,2:08:57.100,1962,9,J.Brabham,ZAF,East London,#ffffff,-0.127758,51.507351
-2528,11,South Africa,LOTUS,5,,1962,9,I.Ireland,ZAF,East London,#ffffff,-0.127758,51.507351
-2529,20,South Africa,LOTUS,6,,1962,9,N.Lederle,ZAF,East London,#ffffff,-0.127758,51.507351
-2530,4,South Africa,BRM,7,,1962,9,R.Ginther,ZAF,East London,#ffffff,-0.127758,51.507351
-2531,18,South Africa,COOPER,8,,1962,9,J.Love,ZAF,East London,#ffffff,-0.127758,51.507351
-2532,5,South Africa,BRM,9,,1962,9,B.Johnstone,ZAF,East London,#ffffff,-0.127758,51.507351
-2533,14,South Africa,LOTUS,10,,1962,9,E.Pieterse,ZAF,East London,#ffffff,-0.127758,51.507351
-2534,15,South Africa,PORSCHE,11,,1962,9,C.G.de Beaufort,ZAF,East London,#ffffff,-0.127758,51.507351
-2535,21,South Africa,LDS,r,,1962,9,D.Serrurier,ZAF,East London,#ffffff,-0.127758,51.507351
-2536,1,South Africa,LOTUS,r,,1962,9,J.Clark,ZAF,East London,#ffffff,-0.127758,51.507351
-2537,7,South Africa,LOLA,r,,1962,9,R.Salvadori,ZAF,East London,#ffffff,-0.127758,51.507351
-2538,22,South Africa,COOPER,r,,1962,9,M.Harris,ZAF,East London,#ffffff,-0.127758,51.507351
-2539,6,South Africa,LOLA,r,,1962,9,J.Surtees,ZAF,East London,#ffffff,-0.127758,51.507351
-2540,2,South Africa,LOTUS,r,,1962,9,T.Taylor,ZAF,East London,#ffffff,-0.127758,51.507351
+2524,3,South Africa,BRM,1,2:08:03.300,1962,9,G.Hill,ZAF,East London,#66d9ff,27.854587,-33.029158
+2525,8,South Africa,COOPER,2,2:08:53.100,1962,9,B.McLaren,ZAF,East London,#ffffff,27.854587,-33.029158
+2526,9,South Africa,COOPER,3,2:08:53.600,1962,9,T.Maggs,ZAF,East London,#ffffff,27.854587,-33.029158
+2527,10,South Africa,BRABHAM,4,2:08:57.100,1962,9,J.Brabham,ZAF,East London,#ffffff,27.854587,-33.029158
+2528,11,South Africa,LOTUS,5,,1962,9,I.Ireland,ZAF,East London,#ffffff,27.854587,-33.029158
+2529,20,South Africa,LOTUS,6,,1962,9,N.Lederle,ZAF,East London,#ffffff,27.854587,-33.029158
+2530,4,South Africa,BRM,7,,1962,9,R.Ginther,ZAF,East London,#ffffff,27.854587,-33.029158
+2531,18,South Africa,COOPER,8,,1962,9,J.Love,ZAF,East London,#ffffff,27.854587,-33.029158
+2532,5,South Africa,BRM,9,,1962,9,B.Johnstone,ZAF,East London,#ffffff,27.854587,-33.029158
+2533,14,South Africa,LOTUS,10,,1962,9,E.Pieterse,ZAF,East London,#ffffff,27.854587,-33.029158
+2534,15,South Africa,PORSCHE,11,,1962,9,C.G.de Beaufort,ZAF,East London,#ffffff,27.854587,-33.029158
+2535,21,South Africa,LDS,r,,1962,9,D.Serrurier,ZAF,East London,#ffffff,27.854587,-33.029158
+2536,1,South Africa,LOTUS,r,,1962,9,J.Clark,ZAF,East London,#ffffff,27.854587,-33.029158
+2537,7,South Africa,LOLA,r,,1962,9,R.Salvadori,ZAF,East London,#ffffff,27.854587,-33.029158
+2538,22,South Africa,COOPER,r,,1962,9,M.Harris,ZAF,East London,#ffffff,27.854587,-33.029158
+2539,6,South Africa,LOLA,r,,1962,9,J.Surtees,ZAF,East London,#ffffff,27.854587,-33.029158
+2540,2,South Africa,LOTUS,r,,1962,9,T.Taylor,ZAF,East London,#ffffff,27.854587,-33.029158
 2541,6,Monaco,BRM,1,2:41:49.700,1963,1,G.Hill,MCO,Monte Carlo,#66d9ff,7.424616,43.738418
 2542,5,Monaco,BRM,2,2:41:54.300,1963,1,R.Ginther,MCO,Monte Carlo,#ffffff,7.424616,43.738418
 2543,7,Monaco,COOPER,3,2:42:02.500,1963,1,B.McLaren,MCO,Monte Carlo,#ffffff,7.424616,43.738418
@@ -2726,27 +2726,27 @@ id,pers_num,gp_name,team,pos,time,year,round,pilot,code,circuit,color,lon,lat
 2724,18,Mexico,LOTUS,r,,1963,9,C.Amon,MEX,Mexico City,#ffffff,-99.133208,19.432608
 2725,4,Mexico,COOPER,r,,1963,9,T.Maggs,MEX,Mexico City,#ffffff,-99.133208,19.432608
 2726,20,Mexico,COOPER,ns,,1963,9,F.Dochnal,MEX,Mexico City,#ffffff,-99.133208,19.432608
-2727,1,South Africa,LOTUS,1,2:10:36.900,1963,10,J.Clark,ZAF,East London,#ffdd1a,-0.127758,51.507351
-2728,9,South Africa,BRABHAM,2,2:11:43.700,1963,10,D.Gurney,ZAF,East London,#ffffff,-0.127758,51.507351
-2729,5,South Africa,BRM,3,,1963,10,G.Hill,ZAF,East London,#ffffff,-0.127758,51.507351
-2730,10,South Africa,COOPER,4,,1963,10,B.McLaren,ZAF,East London,#ffffff,-0.127758,51.507351
-2731,4,South Africa,FERRARI,5,,1963,10,L.Bandini,ZAF,East London,#ffffff,-0.127758,51.507351
-2732,12,South Africa,COOPER,6,,1963,10,J.Bonnier,ZAF,East London,#ffffff,-0.127758,51.507351
-2733,11,South Africa,COOPER,7,,1963,10,T.Maggs,ZAF,East London,#ffffff,-0.127758,51.507351
-2734,2,South Africa,LOTUS,8,,1963,10,T.Taylor,ZAF,East London,#ffffff,-0.127758,51.507351
-2735,19,South Africa,COOPER,9,,1963,10,J.Love,ZAF,East London,#ffffff,-0.127758,51.507351
-2736,14,South Africa,PORSCHE,10,,1963,10,C.G.de Beaufort,ZAF,East London,#ffffff,-0.127758,51.507351
-2737,16,South Africa,LDS,11,,1963,10,D.Serrurier,ZAF,East London,#ffffff,-0.127758,51.507351
-2738,23,South Africa,COOPER,12,,1963,10,T.Blokdyk,ZAF,East London,#ffffff,-0.127758,51.507351
-2739,8,South Africa,BRABHAM,13,,1963,10,J.Brabham,ZAF,East London,#ffffff,-0.127758,51.507351
-2740,21,South Africa,LOTUS,14,,1963,10,B.Niemann,ZAF,East London,#ffffff,-0.127758,51.507351
-2741,18,South Africa,ALFA ROMEO,r,,1963,10,P.de Klerk,ZAF,East London,#ffffff,-0.127758,51.507351
-2742,22,South Africa,BRABHAM,r,,1963,10,D.Prophet,ZAF,East London,#ffffff,-0.127758,51.507351
-2743,6,South Africa,BRM,r,,1963,10,R.Ginther,ZAF,East London,#ffffff,-0.127758,51.507351
-2744,3,South Africa,FERRARI,r,,1963,10,J.Surtees,ZAF,East London,#ffffff,-0.127758,51.507351
-2745,7,South Africa,LOTUS,r,,1963,10,E.Pieterse,ZAF,East London,#ffffff,-0.127758,51.507351
-2746,20,South Africa,LDS,r,,1963,10,S.Tingle,ZAF,East London,#ffffff,-0.127758,51.507351
-2747,15,South Africa,LOTUS,ns,,1963,10,P.Driver,ZAF,East London,#ffffff,-0.127758,51.507351
+2727,1,South Africa,LOTUS,1,2:10:36.900,1963,10,J.Clark,ZAF,East London,#ffdd1a,27.854587,-33.029158
+2728,9,South Africa,BRABHAM,2,2:11:43.700,1963,10,D.Gurney,ZAF,East London,#ffffff,27.854587,-33.029158
+2729,5,South Africa,BRM,3,,1963,10,G.Hill,ZAF,East London,#ffffff,27.854587,-33.029158
+2730,10,South Africa,COOPER,4,,1963,10,B.McLaren,ZAF,East London,#ffffff,27.854587,-33.029158
+2731,4,South Africa,FERRARI,5,,1963,10,L.Bandini,ZAF,East London,#ffffff,27.854587,-33.029158
+2732,12,South Africa,COOPER,6,,1963,10,J.Bonnier,ZAF,East London,#ffffff,27.854587,-33.029158
+2733,11,South Africa,COOPER,7,,1963,10,T.Maggs,ZAF,East London,#ffffff,27.854587,-33.029158
+2734,2,South Africa,LOTUS,8,,1963,10,T.Taylor,ZAF,East London,#ffffff,27.854587,-33.029158
+2735,19,South Africa,COOPER,9,,1963,10,J.Love,ZAF,East London,#ffffff,27.854587,-33.029158
+2736,14,South Africa,PORSCHE,10,,1963,10,C.G.de Beaufort,ZAF,East London,#ffffff,27.854587,-33.029158
+2737,16,South Africa,LDS,11,,1963,10,D.Serrurier,ZAF,East London,#ffffff,27.854587,-33.029158
+2738,23,South Africa,COOPER,12,,1963,10,T.Blokdyk,ZAF,East London,#ffffff,27.854587,-33.029158
+2739,8,South Africa,BRABHAM,13,,1963,10,J.Brabham,ZAF,East London,#ffffff,27.854587,-33.029158
+2740,21,South Africa,LOTUS,14,,1963,10,B.Niemann,ZAF,East London,#ffffff,27.854587,-33.029158
+2741,18,South Africa,ALFA ROMEO,r,,1963,10,P.de Klerk,ZAF,East London,#ffffff,27.854587,-33.029158
+2742,22,South Africa,BRABHAM,r,,1963,10,D.Prophet,ZAF,East London,#ffffff,27.854587,-33.029158
+2743,6,South Africa,BRM,r,,1963,10,R.Ginther,ZAF,East London,#ffffff,27.854587,-33.029158
+2744,3,South Africa,FERRARI,r,,1963,10,J.Surtees,ZAF,East London,#ffffff,27.854587,-33.029158
+2745,7,South Africa,LOTUS,r,,1963,10,E.Pieterse,ZAF,East London,#ffffff,27.854587,-33.029158
+2746,20,South Africa,LDS,r,,1963,10,S.Tingle,ZAF,East London,#ffffff,27.854587,-33.029158
+2747,15,South Africa,LOTUS,ns,,1963,10,P.Driver,ZAF,East London,#ffffff,27.854587,-33.029158
 2748,8,Monaco,BRM,1,2:41:19.500,1964,1,G.Hill,MCO,Monte Carlo,#66d9ff,7.424616,43.738418
 2749,7,Monaco,BRM,2,,1964,1,R.Ginther,MCO,Monte Carlo,#ffffff,7.424616,43.738418
 2750,11,Monaco,LOTUS,3,,1964,1,P.Arundell,MCO,Monte Carlo,#ffffff,7.424616,43.738418
@@ -2948,26 +2948,26 @@ id,pers_num,gp_name,team,pos,time,year,round,pilot,code,circuit,color,lon,lat
 2946,22,Mexico,BRABHAM,r,,1964,10,J.Siffert,MEX,Mexico City,#ffffff,-99.133208,19.432608
 2947,16,Mexico,BRABHAM,r,,1964,10,J.Bonnier,MEX,Mexico City,#ffffff,-99.133208,19.432608
 2948,12,Mexico,BRP,r,,1964,10,T.Taylor,MEX,Mexico City,#ffffff,-99.133208,19.432608
-2949,5,South Africa,LOTUS,1,2:06:46.000,1965,1,J.Clark,ZAF,East London,#ffdd1a,-0.127758,51.507351
-2950,1,South Africa,FERRARI,2,2:07:15.000,1965,1,J.Surtees,ZAF,East London,#ffffff,-0.127758,51.507351
-2951,3,South Africa,BRM,3,2:07:17.800,1965,1,G.Hill,ZAF,East London,#ffffff,-0.127758,51.507351
-2952,6,South Africa,LOTUS,4,2:07:40.400,1965,1,M.Spence,ZAF,East London,#ffffff,-0.127758,51.507351
-2953,9,South Africa,COOPER,5,,1965,1,B.McLaren,ZAF,East London,#ffffff,-0.127758,51.507351
-2954,4,South Africa,BRM,6,,1965,1,J.Stewart,ZAF,East London,#ffffff,-0.127758,51.507351
-2955,12,South Africa,BRABHAM,7,,1965,1,J.Siffert,ZAF,East London,#ffffff,-0.127758,51.507351
-2956,7,South Africa,BRABHAM,8,,1965,1,J.Brabham,ZAF,East London,#ffffff,-0.127758,51.507351
-2957,18,South Africa,BRABHAM,9,,1965,1,P.Hawkins,ZAF,East London,#ffffff,-0.127758,51.507351
-2958,20,South Africa,ALFA ROMEO,10,,1965,1,P.de Klerk,ZAF,East London,#ffffff,-0.127758,51.507351
-2959,15,South Africa,LOTUS,11,,1965,1,T.Maggs,ZAF,East London,#ffffff,-0.127758,51.507351
-2960,16,South Africa,BRABHAM,12,,1965,1,F.Gardner,ZAF,East London,#ffffff,-0.127758,51.507351
-2961,25,South Africa,LDS,13,,1965,1,S.Tingle,ZAF,East London,#ffffff,-0.127758,51.507351
-2962,19,South Africa,BRABHAM,14,,1965,1,D.Prophet,ZAF,East London,#ffffff,-0.127758,51.507351
-2963,2,South Africa,FERRARI,15,,1965,1,L.Bandini,ZAF,East London,#ffffff,-0.127758,51.507351
-2964,14,South Africa,BRABHAM,nc,,1965,1,B.Anderson,ZAF,East London,#ffffff,-0.127758,51.507351
-2965,11,South Africa,BRABHAM,r,,1965,1,J.Bonnier,ZAF,East London,#ffffff,-0.127758,51.507351
-2966,10,South Africa,COOPER,r,,1965,1,J.Rindt,ZAF,East London,#ffffff,-0.127758,51.507351
-2967,17,South Africa,COOPER,r,,1965,1,J.Love,ZAF,East London,#ffffff,-0.127758,51.507351
-2968,8,South Africa,BRABHAM,r,,1965,1,D.Gurney,ZAF,East London,#ffffff,-0.127758,51.507351
+2949,5,South Africa,LOTUS,1,2:06:46.000,1965,1,J.Clark,ZAF,East London,#ffdd1a,27.854587,-33.029158
+2950,1,South Africa,FERRARI,2,2:07:15.000,1965,1,J.Surtees,ZAF,East London,#ffffff,27.854587,-33.029158
+2951,3,South Africa,BRM,3,2:07:17.800,1965,1,G.Hill,ZAF,East London,#ffffff,27.854587,-33.029158
+2952,6,South Africa,LOTUS,4,2:07:40.400,1965,1,M.Spence,ZAF,East London,#ffffff,27.854587,-33.029158
+2953,9,South Africa,COOPER,5,,1965,1,B.McLaren,ZAF,East London,#ffffff,27.854587,-33.029158
+2954,4,South Africa,BRM,6,,1965,1,J.Stewart,ZAF,East London,#ffffff,27.854587,-33.029158
+2955,12,South Africa,BRABHAM,7,,1965,1,J.Siffert,ZAF,East London,#ffffff,27.854587,-33.029158
+2956,7,South Africa,BRABHAM,8,,1965,1,J.Brabham,ZAF,East London,#ffffff,27.854587,-33.029158
+2957,18,South Africa,BRABHAM,9,,1965,1,P.Hawkins,ZAF,East London,#ffffff,27.854587,-33.029158
+2958,20,South Africa,ALFA ROMEO,10,,1965,1,P.de Klerk,ZAF,East London,#ffffff,27.854587,-33.029158
+2959,15,South Africa,LOTUS,11,,1965,1,T.Maggs,ZAF,East London,#ffffff,27.854587,-33.029158
+2960,16,South Africa,BRABHAM,12,,1965,1,F.Gardner,ZAF,East London,#ffffff,27.854587,-33.029158
+2961,25,South Africa,LDS,13,,1965,1,S.Tingle,ZAF,East London,#ffffff,27.854587,-33.029158
+2962,19,South Africa,BRABHAM,14,,1965,1,D.Prophet,ZAF,East London,#ffffff,27.854587,-33.029158
+2963,2,South Africa,FERRARI,15,,1965,1,L.Bandini,ZAF,East London,#ffffff,27.854587,-33.029158
+2964,14,South Africa,BRABHAM,nc,,1965,1,B.Anderson,ZAF,East London,#ffffff,27.854587,-33.029158
+2965,11,South Africa,BRABHAM,r,,1965,1,J.Bonnier,ZAF,East London,#ffffff,27.854587,-33.029158
+2966,10,South Africa,COOPER,r,,1965,1,J.Rindt,ZAF,East London,#ffffff,27.854587,-33.029158
+2967,17,South Africa,COOPER,r,,1965,1,J.Love,ZAF,East London,#ffffff,27.854587,-33.029158
+2968,8,South Africa,BRABHAM,r,,1965,1,D.Gurney,ZAF,East London,#ffffff,27.854587,-33.029158
 2969,3,Monaco,BRM,1,2:37:39.600,1965,2,G.Hill,MCO,Monte Carlo,#66d9ff,7.424616,43.738418
 2970,17,Monaco,FERRARI,2,2:38:43.600,1965,2,L.Bandini,MCO,Monte Carlo,#ffffff,7.424616,43.738418
 2971,4,Monaco,BRM,3,2:39:21.500,1965,2,J.Stewart,MCO,Monte Carlo,#ffffff,7.424616,43.738418

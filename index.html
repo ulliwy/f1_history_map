@@ -340,6 +340,18 @@
               .attr('r', 5)
               .on('click', function(d) {
                 show_pilot_list(d);
+              })
+              .on('mousemove', function(d) {
+                var mouse = d3.mouse(svg.node()).map(function(d) {
+                  return parseInt(d);
+                });
+                tooltip.classed('hidden', false)
+                  .attr('style', 'left:' + (d3.event.pageX + 15) +
+                      'px; top:' + (d3.event.pageY- 35) + 'px; color: #b300b3;')
+                  .html('Track: ' + d.circuit);
+                })
+              .on('mouseout', function() {
+                tooltip.classed('hidden', true);
               });
 
 
@@ -454,8 +466,8 @@
       </script>
   </head>
 <body>
-  <div class='loading'><div class='floater'></div><div>Loading...</div></div>
   <h1>Formula 1 Historical Results</h1>
+  <div class='loading'><div class='floater'></div><div>Loading...</div></div>
   <div class='container'>
     <img src="img/f1_logo_big.png" alt="logo" />
     <div class="legend_placeholder"><h2>Grand Prix Winners</h2></div>
