@@ -127,18 +127,25 @@
 
     span.selected {
       color: white;
-      background-color: #330066;
     }
 
     div.years_buttons span{
       float: left;
-      margin: 5px;
+      padding: 5px;
       cursor: pointer;
+      width: 40px;
+
+      transition: background-color 0.5s ease;
+    }
+
+    div.years_buttons span:hover{
+      background-color: white !important;
+      color: black !important;
     }
 
     div.years_buttons {
       margin: auto;
-      width: 606px;
+      width: 60%;
     }
 
     div.circle {
@@ -174,6 +181,7 @@
           .scaleExtent([1, 8])
           .on("zoom", zoomed);
 
+        // creating svg element 
         var svg = d3.select("body").select('div.map_placeholder')
             .append("svg")
             .attr('class', 'map')
@@ -204,6 +212,7 @@
         var tooltip = d3.select('body').append('div')
             .attr('class', 'hidden tooltip');
 
+        // drawing the main map
         var map = svg.selectAll('path')
           .data(geo_data.features)
           .enter()
@@ -235,23 +244,54 @@
         pilot_table_header.append('th').text('Finish Time');
 
         function plot_gp(data) {
+          // adding grand prix data to map
 
           function key_func(d) {
             return d['id'];
           }
 
+          // update map for given year(countries, circles, pilot list, legend)
           function update(year) {
+
             var season = data.filter(function(d) {
               return ((d['year'] === year) && (d['pos'] === '1'));
             })
 
+            // updating circles
             var circles = svg.selectAll('circle')
               .data(season, key_func);
 
             circles.exit().remove();
 
+            circles.enter()
+              .append('circle')
+              .attr('class', 'gp_circle')
+              .attr('cx', function(d) {
+                return projection([+d.lon, +d.lat])[0];
+              })
+              .attr('cy', function(d) {
+                return projection([+d.lon, +d.lat])[1];
+              })
+              .attr('r', 5)
+              .on('click', function(d) {
+                show_pilot_list(d);
+              })
+              .on('mousemove', function(d) {
+                var mouse = d3.mouse(svg.node()).map(function(d) {
+                  return parseInt(d);
+                });
+                tooltip.classed('hidden', false)
+                  .attr('style', 'left:' + (d3.event.pageX + 15) +
+                      'px; top:' + (d3.event.pageY- 35) + 'px; color: #b300b3;')
+                  .html('Track: ' + d.circuit);
+                })
+              .on('mouseout', function() {
+                tooltip.classed('hidden', true);
+              });
 
             function show_pilot_list(gp_winner) {
+              // showing pilot list acc. to clicked country (property == geometry) 
+              // or circle
               if (gp_winner.hasOwnProperty('geometry')) {
                 var grand_prix = data.filter(function(d) {
                   return ((d.year === year) && (d.code === gp_winner.id));
@@ -261,13 +301,10 @@
                   return ((gp_winner.year === d.year) && (gp_winner.gp_name === d.gp_name));
                 });
               }
-              debugger;
 
               d3.select('.pilot_list_placeholder')
                 .select('h2')
                 .text('Grand Prix: ' + grand_prix[0].gp_name);
-
-              debugger;
               
               grand_prix.sort(function(a, b) {
                 var a_int = parseInt(a.pos, 10);
@@ -283,7 +320,7 @@
                 }
               });
 
-
+              // updating pilot table
               var pilot_list = pilot_table.selectAll('.pilot_list')
                 .data(grand_prix, key_func);
 
@@ -322,38 +359,11 @@
                 .attr('class', 'time')
                 .text(function(d) {
                   return d.time;
-                })
-
-            }
-
-            show_pilot_list(season[0]);  //initial list
-
-            circles.enter()
-              .append('circle')
-              .attr('class', 'gp_circle')
-              .attr('cx', function(d) {
-                return projection([+d.lon, +d.lat])[0];
-              })
-              .attr('cy', function(d) {
-                return projection([+d.lon, +d.lat])[1];
-              })
-              .attr('r', 5)
-              .on('click', function(d) {
-                show_pilot_list(d);
-              })
-              .on('mousemove', function(d) {
-                var mouse = d3.mouse(svg.node()).map(function(d) {
-                  return parseInt(d);
                 });
-                tooltip.classed('hidden', false)
-                  .attr('style', 'left:' + (d3.event.pageX + 15) +
-                      'px; top:' + (d3.event.pageY- 35) + 'px; color: #b300b3;')
-                  .html('Track: ' + d.circuit);
-                })
-              .on('mouseout', function() {
-                tooltip.classed('hidden', true);
-              });
+          }
 
+          // showing initial pilot table
+          show_pilot_list(season[0]);
 
           var teams_colors = {};
 
@@ -361,9 +371,9 @@
             if (Object.keys(teams_colors).indexOf(season[i].team) === -1) {
               teams_colors[season[i].team] = season[i].color;
             }
-
           };
-          
+
+          // updating legend
           var legendDiv = d3.select('div.legend_placeholder');
 
           var legend = legendDiv.selectAll('div.legend')
@@ -388,82 +398,166 @@
               return d;
             });
 
-            function update_countries(d) {
-              for (i = 0; i < season.length; i++) {
-                if (d.id === season[i].code) {
-                  return season[i].color;
-                }
+          // return winner color for country
+          function update_countries(d) {
+            for (i = 0; i < season.length; i++) {
+              if (d.id === season[i].code) {
+                return season[i].color;
               }
-              return null;
-            };
+            }
+            return null;
+          };
 
-            svg.selectAll('path')
-              .attr('class', function(d) {
-                if (update_countries(d) != null) {
-                  return 'highlighted';
-                }
-              })
-              .style('fill', update_countries)
-              .on('click', function(d) {
-                if (update_countries(d) != null) {
-                  show_pilot_list(d);
-                }
-              });
-
-            zoom.event(svg);
-          }
-
-          //var r = update('2016');
-          var years = [];
-
-          for (var i = 2016; i >= 1950; i--) {
-            years.push(i);
-          }
-
-          //initial button
-          var buttons = d3.select('body').select('div.years_placeholder')
-            .append('div')
-            .attr('class', 'years_buttons')
-            .selectAll('span')
-            .data(years)
-            .enter()
-            .append('span')
+          svg.selectAll('path')
             .attr('class', function(d) {
-              if (d === 2016) {
-                return 'selected';
+              if (update_countries(d) != null) {
+                return 'highlighted';
               }
-
-              return null;
             })
-            .text(function(d) {
-              return d.toString();
-            })
+            .style('fill', update_countries)
+            .on('click', function(d) {
+              if (update_countries(d) != null) {
+                show_pilot_list(d);
+              }
+            });
 
+          zoom.event(svg);
+
+          buttons.filter(d => d == +year)
+            .classed('selected', true);
+        } // end of update
+
+
+        var years = [];
+
+        for (var i = 2016; i >= 1950; i--) {
+          years.push(i);
+        }
+
+        // initial buttons
+        var buttons = d3.select('body').select('div.years_placeholder')
+          .append('div')
+          .attr('class', 'years_buttons')
+          .selectAll('span')
+          .data(years)
+          .enter()
+          .append('span')
+          .text(function(d) {
+            return d.toString();
+          });
+
+        //finding all leaders per year
+        function find_leaders_per_year(d) {
+          function roll(d) {
+            return {
+              'len': d.length,
+              'col': d[0].color
+            }
+          }
+
+          var nested = d3.nest()
+            .key(d => d.year)
+            .key(d => d.team)
+            .rollup(roll)
+            .entries(data.filter(function(d) {
+              return (d.pos === '1');
+            }));
+
+          var leaders = nested.map(function(d) {
+            var sum = 0;
+            for (var i = 0; i < d.values.length; i++) {
+              sum = sum + d.values[i].values.len;
+            }
+
+            d.values.sort(function(a, b) {
+              return b.values.len - a.values.len;
+            });
+
+          for (var i = 0; i <= d.values.length; i++) {
+            return {
+              'year': d.key,
+              'team': (d.values[i].values.len >= (sum / 3.0)) ? d.values[i].key: null,
+              'color': d.values[i].values.col
+              }
+            }
+          });
+          return leaders;
+        }
+
+        // coloring buttons and activating year navigation
+        function activate_buttons() {
+          var year_col = find_leaders_per_year(data).reduce(function(b, k) {
+            b[k.year] = k.color;
+            return b;
+          }, {});
 
           buttons.on('click', function(d) {
             d3.select('.years_buttons')
               .selectAll('span')
               .classed('selected', false);
 
-            d3.select(this)
-              .classed('selected', true);
-
             update(d.toString());
-          });
-        
-          update('2016');
-          d3.select('.loading')
-            .remove();
-        };
+          })
+          .style('background-color', function(d) {
+            return year_col[d];
+          })
+          .style('color', null);
+        }
 
+        // start animation per year
+        var idx = 1950;
+        var country_arr = [];
 
-        var format = d3.time.format('%Y');
+        buttons.on('click', function() {
+          idx = 2017;
+        });
 
-        d3.csv('f1.csv', plot_gp);
+        var interval = setInterval(function() {
+          while(true) {
+            if (idx > 2016) {
+              clearInterval(interval);
 
-      }
-      
-      </script>
+              activate_buttons();
+              update('2016');
+              break;
+            }
+
+            // coloring buttons per year
+            buttons.filter(d => d == idx)
+              .style('background-color', '#6687ff')
+              .style('color', 'white');
+
+            var countries_per_year = d3.nest()
+              .key(d => d.code)
+              .entries(data.filter(d => d.year == idx.toString()))
+              .map(d => d.key);
+
+            // coloring countries per year
+            var enter = svg.selectAll('path')
+              .filter(d => (countries_per_year.indexOf(d.id) >= 0) && (country_arr.indexOf(d.id) == -1))
+              .style('fill', '#6687ff');
+
+            enter.each(v => country_arr.push(v.id));
+
+            idx++;
+
+            if (enter.size() == 0) {
+              continue;
+            }
+            break;
+          }
+
+        }, 500);
+
+        d3.select('.loading').remove();
+
+      };
+
+      var format = d3.time.format('%Y');
+      d3.csv('f1.csv', plot_gp);
+
+    }    
+    </script>
   </head>
 <body>
   <h1>Formula 1 Historical Results</h1>
