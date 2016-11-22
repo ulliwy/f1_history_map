@@ -1,7 +1,7 @@
 # FORMULA 1 Grand Prix History Results
 ## Summary:
-This graph describes the whole 66 years of Formula 1 Championship history since 1950. Watch how championship was spread over the world over the years, see each race results on the map.
-Each year is represented by several Grand Prix that took place on selected year. Also, specific Grand Prix results can be found on this graph.
+This graph describes the whole 66 years of Formula 1 Championship history since 1950. Watch how championship was spread over the world over the years and new countries were joining Formula 1. See each race results on the map.
+Each year is represented by several Grand Prix that took place on selected year. Also, specific Grand Prix results can be found on this graph. See championship leader for each year.
 Main data was parsed from http://www.f1-data.com using Python script. Coordinates, teams colors were added manually by me.
 
 ### Folder content:
@@ -10,6 +10,7 @@ Main data was parsed from http://www.f1-data.com using Python script. Coordinate
 - /progress - images of design improving
 - f1.csv - main data set
 - world_countries.json - data for map drawing
+- index.html - main visualization
 
 ## Design:
 1. The initial design was pretty simple: color countries by Grand Prix winners on the map. Show results for each year. See _"progress/1.jpg"_ for the first scratch. Firstly the map with colored countries was added with teams colors legend.
@@ -17,12 +18,14 @@ Main data was parsed from http://www.f1-data.com using Python script. Coordinate
 3. List of Grand Prix results was added for each race: position number, pilot name and finish time. I also changed the design of Grand Prix circles on the map and buttons design. I have changed text font and added map zoom. See "progress/3.png".
 4. GP results list still looked messy, so I have changed <div> structure to a table. See "progress/4.png". Here the second feedback was collected.
 5. During this improvement the page layout was redesigned: the map is shown on 100% of the page, map legend and pilot list are placed on the left and right sides. See "progress/5.jpg" and "progress/6.png".
+6. During this improvement, I've added visualization that shows how countries were joining the championship with years. Also, buttons were colored with championship leader color.
 
 ### Final design description: 
+The animation shows what countries were joining the Formula 1 Championship with years. The animation can be interrupted by clicking on any year button.
 The main map is placed in the middle. Countries are colored by team colors. The colors legend is placed on the left with teams names. The map can be zoomed and moved via mouse.
-On the right, there is a list of Grand Prix results for the specific race. List is showed by clicking on circuit circle or country.
-There are years buttons under the map, clicking each button shows results of selected year.
-Moving mouse on the countries shows country name. Moving mouse on Gran Prix circle shows circuit name.
+On the right, there is a list of Grand Prix results for the specific race. The list is showed by clicking on circuit circle or country.
+There are years buttons under the map, buttons are colored with leader team color.Clicking each button shows results of selected year.
+Moving mouse to the countries shows country name. Moving mouse on Gran Prix circle shows circuit name.
 
 ## Feedback:
 ##### Konstantin, JavaScript Developer:
@@ -31,10 +34,10 @@ Moving mouse on the countries shows country name. Moving mouse on Gran Prix circ
 2. What questions do you have about the data?
    - Good to know names of Grand Prix and each race results.
 3. Suggest any improvements?
-   - Add headers. 
-   - CSS style must be significantly improved.
-   - Add zoom, especially to see Europe part, there are a lot of races.
-   - Add each Grand Prix result.
+   - Add headers. _(implemented)_
+   - CSS style must be significantly improved. _(implemented)_
+   - Add zoom, especially to see Europe part, there are a lot of races. _(implemented)_
+   - Add each Grand Prix result. _(implemented)_
 
 ##### Paul, Compiler Developer, big fan of Formula 1:
 1. What is this visualization about? What did you notice?
@@ -42,8 +45,8 @@ Moving mouse on the countries shows country name. Moving mouse on Gran Prix circ
 2. What is the main takeaway of this visualization?
    - It is possible to see the whole story of Formula 1 GPs. The main takeaway to see races winners for each year.
 3. Any improvements or unclear moments?
-   - When loading visualization the page is blank. It would be nice to have a message about it. 
-   - Colors on the map are dull.
+   - When loading visualization the page is blank. It would be nice to have a message about it. _(implemented)_
+   - Colors on the map are dull. _(implemented)_
    - It would be good to see the order of GPs.
 
 ##### Dmitriy, Software Developer:
@@ -52,7 +55,8 @@ Moving mouse on the countries shows country name. Moving mouse on Gran Prix circ
 2. Is there something you don’t understand in the graphic?
    - Sometimes there are several races in a country. Probably several races?
 3. Any improvements, suggestions?
-   - Improve design, make it more beautiful. Table on the right is clumsy.
+   - Improve design, make it more beautiful. _(implemented)_
+   - Table on the right is clumsy.
 
 ##### Kate, Designer:
 1. What is this visualization about? What did you notice?
@@ -69,6 +73,3 @@ Moving mouse on the countries shows country name. Moving mouse on Gran Prix circ
 - http://bl.ocks.org/mbostock/3680999
 - http://vanseodesign.com/css/
 - http://www.w3schools.com/
-
-
-
